@@ -29,7 +29,7 @@ def get_similarity(resume_text, jd_text):
     matched_keywords.sort(key=lambda x: x[1], reverse=True)
     top_keywords = [word for word, score in matched_keywords[:10]]
 
-    # 🔥 New: Skill gaps (JD keywords not in resume)
+    #  New: Skill gaps (JD keywords not in resume)
     all_jd_keywords = set([feature_names[i] for i in range(len(feature_names)) if jd_vector[i] > 0])
     all_resume_keywords = set([feature_names[i] for i in range(len(feature_names)) if resume_vector[i] > 0])
     gap_keywords = list(all_jd_keywords - all_resume_keywords)
